@@ -11,7 +11,6 @@ using namespace PlayerCc;
 
 int main(int argc, char** argv)
 {
-	int speed, yaw;
 	PlayerClient pc("localhost",6665);
 	Position2dProxy pp(&pc);
 	LaserProxy lp(&pc);
@@ -42,7 +41,7 @@ int main(int argc, char** argv)
 
 		// No obstacles. Go forward.
 		if (last_known_left_obstacle == -1 && last_known_right_obstacle == -1)
-			pp.SetSpeed(0.5, 0);
+			pp.SetSpeed(0.2, 0);
 		else{
 			if (last_known_left_obstacle > last_known_right_obstacle){
 				pp.SetSpeed(0, -0.5);
